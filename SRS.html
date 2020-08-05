@@ -6,7 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="srs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
@@ -20,6 +19,23 @@
   div.col-8 div {
       height: 200px;
   }
+  .navbar{
+  color: black;
+}
+.navbar .col-sm-2 .col-4 .bg-dark{
+  color: black;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+caption {
+  color: black;
+}
 </style>
 </head>
 <body style="background-color:#ffff; color:rgb(1, 2, 1)2, 1)a-spy="scroll" data-target="#myScrollspy" data-offset="1">
@@ -137,6 +153,10 @@
               <td><b>ID</b></td>
             </tr>
             <tr>
+              <td>Rifat Islam</td>
+              <td>1731536042</td>
+            </tr>
+            <tr>
               <td>Ferdous Zeaul Islam</td>
               <td>1731136042</td>
       
@@ -145,12 +165,9 @@
               <td>Mohammed Safat Hosssain</td>
               <td>1731263042</td>
             </tr>
-            <tr>
-              <td>Rifat Islam</td>
-              <td>1731536042</td>
-            </tr>
           </table>
           <br>
+          <h5>CSE327 Section-2</h5><br>
           <h5>Group: Procrastinators</h5><br>
           <h5>Group Number: 10</h5>
           <br>
@@ -170,14 +187,11 @@
         reduce the necessity of going outside for day-to-day household products during the pandemic.
         <h4 id="sec1.2">1.2 Document Convention</h4>
         <p>The document is written following the IEEE template for SRS (Software
-          Requirement Specification). The headers, sub-headers, paragraphs are written as follows: <br><br>
-          i. Headers: Calibri Head, font size-16, Bold <br>
-          ii. Sub-headers: Calibri Head, font size-14 <br>
-          iii. Paragraphs: Calibri Body, font size-12 <br><br>
-          Bold text is used to put emphasis, phrases/words that are defined in the glossary
-          are given in italic with their serial numbers as superscript and a table is used in Section-4
-          to list the actions and system responses under extended use cases of each feature and on
+          Requirement Specification). The headers, sub-headers, paragraphs are written using HTML tags- 'h2', 'h3' and 'p' respectively. 
+          Tables are used in Section-4 to list the actions and system responses under extended use cases of each feature and on
           Section 2.3 to show user classes and their pertinent characteristics.</p>
+        
+        <h4 id="sec1.3">1.3 Intended Audience and Reading Suggestions</h4>
         <p> The primary intended audience of this SRS document are the project team
           members and our course instructor. It should also be understandable to knowledgable
           technical person such as software developers and software industry business
@@ -396,12 +410,30 @@
           <p>On the browse tab (from homepage), there is a list of items that are currently available at the store.The shop-owner can add new items, modify the prices, and remove out of stock items from the list.</p>
           <img height = "450" width="300" src="image/SVG/Cart – Swipe - Delete.svg" alt="">
     
-
+    	<br>
+    	<h5>
+    	<u>Prototype links</u>-
+    	<a target="_blank" href="https://xd.adobe.com/view/2f60c501-be96-4659-8549-485cd3f941c0-7a33/">Customer App</a>,  
+    	<a target="_blank" href="https://xd.adobe.com/view/1a402db4-746c-418f-a0ec-677cfd103e6d-4f13/">Shop-owner App</a>,  
+    	<a target="_blank" href="https://xd.adobe.com/view/51706922-6450-4b78-9f4e-c511cc7cbeb1-0423/">Website</a>
+	</h5> 
+	
+	<br>
+	
         <h4 id="sec3.2">3.2 Hardware Interfaces</h4>
         <p>The device that will run the application, requires WIFI and GPS for using the map and detecting the accurate user location. The device also needs the camera for barcode, product scanning and speaker, microphone for voice call.</p>
 
         <h4 id="sec3.3">3.3 Software Interfaces</h4>
         <p>The minimum android operating system version required to run the application is "Lolipop5.1 (API level 22)".  The application will work properly on any device with the latest (from android 5.1 to 10) android operating system.</p>
+        <p>The third-party software components that are going to be used are,
+        <ul>
+        	<li>Sinch SDK</li>
+        	<li>Fused Location API (Google Play Services) </li>
+        	<li>Maps SDK (Google Play Services) </li>
+        	<li>Barcode Scanning API (Google ML kit) </li>
+        	<li>Text Recognition API (Google ML kit) </li>
+        </ul> 
+        </p>
 
         <h4 id="sec3.4">3.4 Communications Interfaces</h4>
         <p>Real-time voice protocol (RTP) is used in this application for VoIP service, which allows the users to make calls using internet connections. For chatting or messaging, Firebase Cloud Message (FCM) is used, which ensures data protection (GDPR) and encryption.</p>
@@ -1314,8 +1346,8 @@ home.</p>
   </tr>
 
   <tr>
-    <td>4. Click “Post Review” after filling the input fields.</td>
-    <td>4. The review is posted and is visible to all.</td>
+    <td>7. Click “Post Review” after filling the input fields.</td>
+    <td>8. The review is posted and is visible to all.</td>
   </tr>
   </table>
 
