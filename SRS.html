@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>System Requirement Specification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="srs.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative;
+  }
+  ul.nav-pills {
+      position:fixed;
+  }
+  div.col-8 div {
+      height: 200px;
+  }
+</style>
+</head>
+<body style="background-color:#ffff; color:rgb(1, 2, 1)2, 1)a-spy="scroll" data-target="#myScrollspy" data-offset="1">
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <!-- Brand/logo -->
+ 
+  <img style="width:15%"></img>
+  <header class="page header text-white"><h1 style="padding-left:10px;
+     color: #00C569;">System Requirement Specification </h1></header>
+
+  <!-- Links -->
+
+
+</ul>
+</nav>
+
+<div class="wrapper">
+  <div class="sidebar">
+    
+      
+          
+          
+          <div class="container-fluid">
+            <div class="row">
+              <nav class="col-sm-2 col-4 bg-light" id="myScrollspy" >
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Introduction</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec1.1">Purpose</a>
+                      <a class="dropdown-item" href="#sec1.2">Document Convention</a>
+                      <a class="dropdown-item" href="#sec1.3">Intended Audience and<br> Reading Suggestions</a>
+                      <a class="dropdown-item" href="#sec1.4">Product Scope</a>
+                      <a class="dropdown-item" href="#sec1.5">References</a>
+                    </div>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Overall Description</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec2.1">Product Perspective</a>
+                      <a class="dropdown-item" href="#sec2.2">Product Functions</a>
+                      <a class="dropdown-item" href="#sec2.3">User Classes and<br> Characteristics</a>
+                      <a class="dropdown-item" href="#sec2.4">Operating Environment</a>
+                      <a class="dropdown-item" href="#sec2.5">Design and Implementation<br> Constraints</a>
+                      <a class="dropdown-item" href="#sec2.6">User Documentation</a>
+                      <a class="dropdown-item" href="#sec2.7">Assumptions and<br> Dependencies</a>
+                    </div>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">External Interface<br>Requirements</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec3.1">User Interfaces</a>
+                      <a class="dropdown-item" href="#sec3.2">Hardware Interfaces</a>
+                      <a class="dropdown-item" href="#sec3.3">Software Interfaces</a>
+                      <a class="dropdown-item" href="#sec3.4">Communications Interfaces</a>
+                    </div>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">System Features</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec4.1">Functional requirement 1</a>
+                      <a class="dropdown-item" href="#sec4.2">Functional Requirement 2</a>
+                      <a class="dropdown-item" href="#sec4.3">Use case diagram</a>
+                      <a class="dropdown-item" href="#sec4.4">UML expended use case</a>
+                     
+                    </div>
+                  </li>
+          
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Other Nonfunctional<br>Requirements</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec5.1">Performance Requirements</a>
+                      <a class="dropdown-item" href="#sec5.2">Safety Requirements</a>
+                      <a class="dropdown-item" href="#sec5.3">Security Requirements</a>
+                      <a class="dropdown-item" href="#sec5.4">Software Quality Attributes</a>
+                      <a class="dropdown-item" href="#sec5.5">Business Rules</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                <a class="nav-link " href="#section6">Other Requirements</a>
+                  </li>
+          
+          
+                </ul>
+    </nav>
+
+    <div style="padding-top:30px; padding-left:30px; padding-right:150px;" class="col-sm-10 col-8">
+
+        <h2 style="color:#00C569;">1. Introduction</h2>
+        <h4 id="sec1.1">1.1 Purpose</h4>
+        <p>The proposed system 1 is a platform between small local businesses and at home
+          customers to connect and interact with each other. In a way the system is an attempt to
+          virtualize the typical interactions between the two party. The inspiration for this project is to
+          reduce the necessity of going outside for day-to-day household products during the
+          pandemic.
+        <h4 id="sec1.2">1.2 Document Convention</h4>
+        <p>The document is written following the IEEE template for SRS (Software
+          Requirement Specification). The headers, sub-headers, paragraphs are written as follows: <br><br>
+          i. Headers: Calibri Head, font size-16, Bold <br>
+          ii. Sub-headers: Calibri Head, font size-14 <br>
+          iii. Paragraphs: Calibri Body, font size-12 <br><br>
+          Bold text is used to put emphasis, phrases/words that are defined in the glossary
+          are given in italic with their serial numbers as superscript and a table is used in Section-4
+          to list the actions and system responses under extended use cases of each feature and on
+          Section 2.3 to show user classes and their pertinent characteristics.</p>
+        <h4 id="sec1.3">1.3 Intended Audience and Reading Suggestions</h4>
+        <p> The primary intended audience of this SRS document are the project team
+          members and our course instructor. It should also be understandable to knowledgable
+          technical person such as software developers and software industry business
+          specialists. </p>
+        <h4 id="sec1.4">1.4 Product Scope</h4>
+        <p>The main product of our system are the two separate Android app for customers 2 &amp;
+          shop-owners 3 . Interaction between the two parties will be done using the two apps. The
+          system also consists of a website that enables customers 2 to view and post reviews and
+          shop-owners 3 to view their transactions analytics. The goals and objectives of the system
+          are stated below, <br>
+          Goals (what we hope to achieve): <br><br>
+          (i) Substitute/reduce the need for going outside to get day-to-day household items from
+          local stores; particularly- stationary stores, bakeries, convenience stores. <br>
+          (ii) Virtualize the existing interaction between the two party. <br>
+          (iii) Ensure desirable user experience and user expected reliability. <br>
+          
+          Objectives (how we hope to achieve the goals): <br>
+          (i) Mimic the well-known traditional behaviors between customers 2 and shop-owners 3
+          through the android app and website wherever possible. <br> 
+          (ii) Include features that are easy to use and understand such as- connect customers &amp;
+          shop-owners through voice call, form a queue when multiple customers at a shop, take
+          available items input by scanning barcodes etc. (Broadly discussed in section-4) <br>
+          (iii) Design UI components following the designs of existing popular app and websites.</p> 
+
+        <h4 id="sec1.5">1.5 References</h4>
+            Google.com
+        <br><br><br>
+
+        <!-- Descriptions edited -->
+
+        <h2 style="color:#00C569;">2. Overall Description</h2>
+        <p> 
+        <h4 id="sec2.1">2.1 Product Perspective</h4>
+        <p>The idea of this system is inspired from the current area-wise lockdown enforced all
+          over Bangladesh as a counter measure to the pandemic. By using our android app
+          customers from home can connect with local shops to get day-to-day necessary items,
+          while small businesses struggling dearly due to lock-down can continue business. A
+          simple diagram of the overview of the whole system is given below,</p>
+        <h4 id="sec2.2">2.2 Product Functions</h4>
+        <p>The major features of the system are as follows, <br>
+           Register shop-owner accounts &amp; customer accounts. <br>
+           Customers can find shops nearby from map or search for shops by items. <br>
+           Shop-owners entry items by scanning product barcode or image to text conversion
+          from product sticker. <br>
+           Customers enter shops wait in queue(if any), browse items &amp; chat with other
+          customers while waiting.<br>
+           Orders are placed and finalized over voice call (app-to-app) between customers &amp;
+          shop-owners.<br>
+           Shop-owners allow and restrict staff accounts with appropriate functionalities.<br>
+           System suggestion of efficient delivery sequence.<br>
+           Shop-owners and customers view reviews given by customers.<br>
+           Present transaction analytics to shop-owners.</p>
+        <h4 id="sec2.3">2.3 User Classes and Characteristics</h4>
+        <p>Three type of users will interact with our system’s app and website- customer, shop-
+          owner, staff. On the basis of their characteristics further divisions can be made, <br>
+          Based on technical expertise: <br> </p>
+        <p><table style="width:100%">
+          <tr>
+            <th>User class</th>
+            <th>Characteristic</th> 
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>Technophobes (majority)</td>
+            <td>Unwilling to use technology
+              such as mobile phones,
+              computers.</td>
+            <td>Housewife (customer),
+              domestic workers (customer),
+              old person etc.</td>
+          </tr>
+          <tr>
+            <td>Technology Shy</td>
+            <td>Moderate technical expertise.
+              Responsive to clear-cut,
+              visible benefits.</td>
+            <td>People who use phones and
+              computers where absolutely
+              necessary.</td>
+          </tr>
+          <tr>
+            <td>Tech-savvy</td>
+            <td>Comfortable with latest
+              technologies. Well-aware of
+              new trends.</td>
+            <td>Mostly young generation of
+
+              people.</td>
+          </tr>
+        </table>
+        </p>
+        
+        <p>Based on shop-owner app functionality privilege: <br>
+          1. Shop-owners – The user who signs up a shop from the app. All app/website
+privilege is granted. <br>
+2. Staff – Shop-owner assigned users working with features for a registered shop app
+such as entry items, connect to customers, conduct deliveries etc that are allowed
+by shop-owners as well.
+        </p>
+
+        <h4 id="sec2.4">2.4 Operating Environments</h4>
+        <p>Android App sty:  <br>
+          (i) Device Hardware – (i) “Android compatible” device.
+          ref: https://developer.android.com/guide/practices/compatibility#defined <br>
+          (ii) Screen width 4’’ – 6’’, typical phone screen. <br>
+          
+          (ii) Operating System – Android 5.1 (Lolipop) or above. <br>
+          (iii) Software Component – Google Play Services, Sinch Android SDK. <br>
+          
+          Website: Any browser that runs html, css and javascript.</p>
+        <h4 id="sec2.5">2.5 Design and Implementation Constraints</h4>
+        <p> <ul> Shop-owner account’s legitimacy is a concern, since anyone can register.
+          Although we have phone number verification at sign-up implemented. <br>
+           Reliability of delivery and receiving is completely up to the users. The app is
+          merely a medium for confirmation. <br>
+           The basic (free) version API/SDKs, database, hosting service that are used
+          allow a threshold amount of usage. It is important to note that their
+          functionalities are essential for the system. <br>
+           Since the Android OS is open-source, it’s implementation differs from
+          manufacturer to manufacturer. Certain features of our app may not function
+          smoothly due to restrictions put in the OS implementation. <br>
+           The App requires user permission for working with components like- fetching
+          location, microphone-speaker access, camera access etc.
+           The core features require continuous active internet connection. <br>
+           Majority of the target users for the system are technophobe, technology-shy
+          people. Acceptability of the designed UI/UX is uncertain.</ul>  </p>
+        <h4 id="sec2.6">2.6 User Documentation</h4>
+        <p>A demo video of the app and website usage will be available to the users. No
+          documented manual is to be provided.</p>
+        <h4 id="sec2.7">2.7 Assumptions and Dependencies</h4>
+        <p>Assumptions: <br>
+        <ul>
+           Users will adhere to their consents made using the app. Such as- shop-
+owners will deliver and customers will pay on delivery according to their
+mutual consent, customers and shop-owner provide their actual home/store
+address etc. <br>
+ Customers &amp; shop-owners phones have working microphone, speaker
+and/or headphone/earphone connectibility. <br>
+ Shop-owners and staff account (if allowed) holders to have a working
+camera on
+phone that is compatible for working with scanning and text detection tools
+used. <br>
+        </ul></p>
+        <p>Dependencies: <br>
+        <ul>
+           Users need to have google play services installed on their android phones
+(which is pretty common). Particularly- Barcode Scanning &amp; Text
+Recognition from ML kit, Maps SDK, Fused Location API.
+        </ul></p>
+
+
+<!-- no 3 -->
+ <h2 style="color:#00C569;">3. External Interface</h2>
+        <h4 id="sec3.1">3.1 User Interfaces</h4>
+        <p>The UI of the app is designed in such a way that any user can interact with the application comfortably. When the user launches the app for the first time, the landing page welcomes the user with "Sign Up (Get Started)" or "Sign In" option.
+        </p><br>
+        <img style="border: 4px;" src="image/1.JPG" alt=""><br><br>
+
+        <p>The "Sign In" option will land the user to the "Login" page where existing users can use their credentials (e.g., email and password) to log in</p>
+        <img src="image/2.JPG" alt=""><br><br>
+
+        <p>For the new user, the "Sign Up" option will take them to a page where they have to enter their phone number for verification. The OTP code will be needed to insert on the next page to continue the verification process</p>
+        <img src="image/3.jpg" alt=""><br><br>
+
+        <p>After the successful mobile number verification, the user must have to set their profile by providing necessary information in the "Setup Profile" page.</p>
+        <img src="image/4.jpg" alt=""><br><br>
+
+        <p>After completing the authentication process, the user will land on the map-view page locating all the nearby stores, which is also considered as the homepage of the application. Every store on the map has a status indicator (dot) where red, yellow, and green represent not available, busy, and available status.</p>
+        <img src="image/5.jpg" alt=""><br><br>
+
+        <p>To access a store, the user has to tap on the store icon or the name. This will take the user to the specific store page where the user can see the existing queue and a button/option to enter the shop.</p>
+        <img src="image/6.JPG" alt=""><br><br>
+
+        <p>After entering the shop, the user can see his/her name on the queue and access the "Chat" window from the tab above the page. In the chat window, the user can chat with the existing customers in the queue</p>
+        <img src="image/7.JPG" alt=""><br><br>
+
+        <p>On the browse tab, the user can see the existing products and their prices that are available in the store.</p>
+        <img src="image/8.JPG" alt=""><br><br>
+
+        <p>There is an option besides the search box on the navigation bar in the map-view page which allows users to access the menu. The “Menu” page contains several functionality which enables the user to edit profile, view pending orders, check order history and change application settings.</p>
+        <img src="image/9.JPG" alt=""><br><br>
+
+        <p>
+          On the shop-owner version, the user(owner) will be landed on their shop's specific customer queue page after the authentication process. In the queue tab, the user can see the list of all the customers waiting for the service
+          </p>
+          <img src="image/10.JPG" alt=""> <br> <br>
+
+          <p>The "Next Customer" option at the bottom of the homepage takes the user (owner) to the "Purchase List" page. On that page, the user can add the items that the client agrees to buy. There are options for confirming the current order and controlling the ongoing phone call in the bottom section.</p>
+          <img src="image/11.JPG" alt=""> <br> <br>
+          <p>On the browse tab (from homepage), there is a list of items that are currently available at the store.The shop-owner can add new items, modify the prices, and remove out of stock items from the list.</p>
+          <img src="image/12.JPG" alt="">
+    
+
+        <h4 id="sec3.2">3.2 Hardware Interfaces</h4>
+        <p>The device that will run the application, requires WIFI and GPS for using the map and detecting the accurate user location. The device also needs the camera for barcode and product scanning and speaker and microphone for voice call.</p>
+
+        <h4 id="sec3.3">3.3 Software Interfaces</h4>
+        <p>The minimum android operating system version required to run the application is "Lolipop5.1 (API level 22)".  The application will work properly on any device with the latest (from android 5.1 to 10) android operating system.</p>
+
+        <h4 id="sec3.4">Communications Interfaces</h4>
+        <p>Real-time voice protocol (RTP) is used in this application for VoIP service, which allows the users to make calls using internet connections. For chatting or messaging, Firebase Cloud Message (FCM) is used, which ensures data protection (GDPR) and encryption.</p>
+        <br><br><br>
+
+        <!--System Features-->
+        <h2 style="color:#00C569;">4. System Features</h2>
+        <p>This section includes the requirements that describe all the essential functions of the system.
+        <p>The naming convention will follow the following conventions
+        <p>PFRx � Primary functional requirement
+        <p>SFRx � Secondary functional requirement
+
+<h4 id="sec4.1">4.1 Functional Requirement 1 </h4>
+
+ 
+
+<p>4.1.1 Functional requirement 1.1
+<p>ID: PFR1
+<p>TITLE: User Registration
+<p>Auth: User
+<p>PURPOSE: Register the user information
+<p>OVERVIEW: Given that a user has downloaded the mobile application, or accessed the website then the user should be able to register into the system. The user must provide Name, Password, Address, Phone Number, address and user type. User type consist of 'Admin','Tenant'and 'Landlord'.
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: none
+<p>COURSE OF EVENTS: 
+<p> I) Open the application or website
+<p> II) Enter all the information
+<p> III) Click on register
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Email not match with regex, show error: �Please provide a valid email�
+<p> II) Password is less than 6 digits, show error: �Password must include at least 6 digits�
+<p> III) Any field left blank, show error: �All the fields must be filled up�
+<p> IV) User type not selected, default type will be buyer.
+<p>
+<p>4.1.2 Functional requirement 1.2
+<p>ID: PFR2
+<p>TITLE: User Login
+<p>ACTOR: User
+<p>PURPOSE: Login the user
+<p>OVERVIEW: Given that the user is already registered, the user will be able to login by providing the email and password.
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: PFR1
+<p>COURSE OF EVENTS: 
+<p> I) Select �Already Registered� button from the registration page.
+<p> II) Enter email and password
+<p> III) Click on login
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Email not exist, show error: �This email is not registered yet. Please Register first.�
+<p> II) Password does not match: �Password or email is not correct. Please retry!�  
+<p> III) Any field left blank, show error: �All the fields must be filled up�
+<p>
+<p>4.1.3 Functional requirement 1.3
+<p>ID: PFR3
+<p>TITLE: Search
+<p>Auth: User - Tenant
+<p>PURPOSE: Search for house to get
+<p>OVERVIEW: From the home page the tenant type user must be able to search for their preferred product. The search will find the match the title of the product. The user will also be able to add tags to shorten their search range.
+<p>TYPE: Primary function
+<p>PRIORITY: Medium
+<p>DEP: PFR2
+<p>COURSE OF EVENTS: 
+<p> I) Type the search keywords
+<p> II) Provide Tags (Optional)
+<p> III) Click on search
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p>I) Search keywords are empty, show error: �Please enter a keyword�
+
+<p>4.1.4 Functional requirement 1.4
+<p>ID: PFR4
+<p>TITLE: Order Product
+<p>Auth: User - tenant
+<p>PURPOSE: Order the house rent
+<p>OVERVIEW: From the product page a user will be able to click on place order. The order will be placed assuming that the payment type will be pay on delivery and address will be the address of the user.
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: PFR2
+<p>COURSE OF EVENTS: 
+<p> I) Click on Order house
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Address must be valid, Admins will check for the validity of the address and manually send SMS to the user regarding the issue.
+
+<p>4.1.5 Functional requirement 1.5
+<p>ID: PFR5
+<p>TITLE: Rate Product
+<p>Auth: User - tenant
+<p>PURPOSE: Rate and Review previously bought products
+<p>OVERVIEW:  From the Product page the user can click on �Review product� button. This will pop up a window with 5 empty stars and a comment box. The user will have to click on any star which will signify the rating based on one�s index of the star. Th user can additionally add a review comment into the box and submit the rating.
+<p>TYPE: Primary function
+<p>PRIORITY: Low
+<p>DEP: PFR2
+<p>COURSE OF EVENTS: 
+<p> I) Select a star
+<p> II) Optionally type a comment
+<p> III) Click on submit
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) No stars selected, show error: �You must rate the product from 1-5�
+
+<p>4.1.6 Functional requirement 1.6
+<p>ID: PFR6
+<p>TITLE: See AR of the product � Mobile Application only
+<p>Auth: User - Tenant
+<p>PURPOSE: See the product in real time with the camera of the mobile app
+<p>OVERVIEW:  From the product page the tenant can select the view in AR button. This bring to Product AR page. User will be able to move or rotate the product. The product will stay still in perspective of the surface.
+<p>PRIORITY: High
+<p>DEP: PFR8
+<p>COURSE OF EVENTS: 
+<p> I)  Select a product from home page
+<p> II) Click on view product in AR
+<p> III) Exit from the view
+
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Not enough light, show error: �The environment doesn�t have enough light to find a surface�
+<p>   --Wait till environment changes, before showing the product
+
+<p>4.1.7 Functional requirement 1.7
+<p>ID: PFR7
+<p>TITLE: Profile Page
+<p>Auth: User
+<p>PURPOSE: View the profile page
+<p>OVERVIEW:  Show the user information to the user. This information will include, name, email, phone number, address and user type. User will be able to modify any of this information except for the mail. 
+<p>TYPE: Primary function
+<p>PRIORITY: Low
+<p>DEP: PFR2
+<p>COURSE OF EVENTS: 
+<p> I)  Select Profile button from home
+<p> II) Select any field
+<p> III) Modify the selected field
+<p> IV) Click on update information
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Data not downloaded properly, show error: �Couldn�t connect to server, please check your internet connection and try again later!�
+<p>   -Wait till environment changes, before showing the product
+  
+<p>4.1.8 Functional requirement 1.8 
+<p>ID: PFR8
+<p>TITLE: Product Page
+<p>ACTOR: User
+<p>PURPOSE: View the Product page
+<p>OVERVIEW:  Product page can be accessed from various other views. It is assumed that this page is accessed by clicking on a product. The information regarding that product will then be shown here. User can view the details of a product from this view.
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: none
+<p>COURSE OF EVENTS: 
+<p> I)  Select a product
+<p> II) Select any functionality provided by the product page
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Product details not downloaded in time limit of 30 seconds, show error: �Couldn�t connect to server, please check your internet connection and try again later!�
+<p>   -Appear retry button
+
+<p>4.1.9 Functional requirement 1.9 
+<p>ID: PFR9
+<p>TITLE: Administrator Login
+<p>ACTOR: Admin
+<p>PURPOSE: Login the admin
+<p>OVERVIEW:  Given that the admin is already registered the admin will be able to login in trough a web portal.
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: none
+<p>COURSE OF EVENTS: 
+<p> II) Enter email/username and password
+<p> III) Click on login
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Email not exist, show error: �This email/user is not registered yet. Please Register first.�
+<p> II) Password does not match: �Password or email is not correct. Please retry!�  
+<p> III) Any field left blank, show error: �All the fields must be filled up�
+
+<p>4.1.10 Functional requirement 1.10 
+<p>ID: PFR10
+<p>TITLE: Admin Dashboard
+<p>ACTOR: Admin
+<p>PURPOSE: View the admin dashboard
+<p>OVERVIEW:  The admin dashboard will show sales overview and analytics, recent activity and latest orders.
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: PFR9
+<p>COURSE OF EVENTS: 
+<p> I)  Change order status
+<p> II) View order details
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) No order to view
+
+<p>4.1.11 Functional requirement 1.11
+<p>ID: PFR11
+<p>TITLE: Category Menu
+<p>ACTOR: Admin
+<p>PURPOSE: Add new, remove or edit existing categories
+<p>OVERVIEW:  The admin will be able to create a new category. S/He will also be able to remove or edit existing categories.
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: PFR9, PFR10
+<p>COURSE OF EVENTS: 
+<p> I)  Create a new category
+<p> II) Edit existing category
+<p> III)Remove existing category
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) No category to edit/delete
+<p> II) Category Limit reached, no more category can be added.
+
+<p>4.1.12 Functional requirement 1.12
+<p>ID: PFR12
+<p>TITLE: Product Menu
+<p>ACTOR: Admin
+<p>PURPOSE: Add new, remove or edit existing products
+<p>OVERVIEW:  The admin will be able to create a new product. S/He will also be able to remove or edit existing products. Product�s 3D model file can be uploaded as well as 2D images of the product through this menu. 
+<p>TYPE: Primary function
+<p>PRIORITY: High
+<p>DEP: PFR9, PFR10, PFR11
+<p>COURSE OF EVENTS: 
+<p> I)  Create a new Product
+<p> II) Edit existing Product
+<p> III)Remove existing Product
+<p> III) Add product description
+<p> IV) Add 2D images of the product
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) No product to edit/delete
+<p> II) Product capacity reached: �no more products can be added!�.
+<p> III) Invalid file uploaded for 2D image: �Please upload a valid file!�
+<p> IV) File size too big: �File is too large to upload� 
+
+
+<h4 id="sec4.2">4.2 Functional Requirement 2 </h4>
+<p>4.2.1 Functional requirement 2.1
+<p>ID: SFR1
+<p>TITLE: Download mobile application
+<p>ACTOR: User
+<p>OVERVIEW: A user should be able to download the mobile application through either an application store or similar service on the mobile phone. The application should be free to download.
+<p>PURPOSE: In order for a user to download the mobile application.
+<p>TYPE: Secondary function
+<p>Priority: High
+<p>DEP: None
+<p>COURSE OF EVENTS:
+<p> I) Downloads the app from google play store
+
+<p>4.2.2 Functional requirement 2.2
+<p>ID: SFR2
+<p>TITLE: Check Password
+<p>ACTOR: System
+<p>RAT: Match the password
+<p>DESC:  Match password entered by the user during login. The inserted password will be matched against the one stored in the database.
+<p>TYPE: Secondary function
+<p>PRIORITY: High
+<p>DEP: PFR2
+<p>COURSE OF EVENTS: 
+<p> I)  Get password from user
+<p> II) Get password from databases
+<p> III) Match if both the passwords are the same.
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) The errors will be handled by the view using this function
+
+<p>4.2.3 Functional requirement 2.3
+<p>ID: SFR3
+<p>TITLE: Get 3D/2D model
+<p>ACTOR: System
+<p>PURPOSE: Get the 3d model of a specified product from the database
+<p>OVERVIEW:  Search for the product id and find the 3D model from the database
+<p>TYPE: Secondary function
+<p>PRIORITY: High
+<p>DEP: none
+<p>COURSE OF EVENTS: 
+<p> I)  Get product ID
+<p> II) Search the product by its id in the database
+<p> III) Download the 3D/2D model
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Internet Connection Problem, show error �Couldn�t download the 3D model, please try again later�
+<p>   -Appear retry button
+
+
+<p>4.2.4 Functional requirement 2.4
+<p>ID: SFR4
+<p>TITLE: Check if User is logged in
+<p>ACTOR: System
+<p>PURPOSE: Check if user is already logged in
+<p>OVERVIEW: The system may need to check if the user is properly logged in in different scenarios. The login state may be cached in the running device.
+<p>TYPE: Secondary function
+<p>PRIORITY: High
+<p>DEP: PFR2
+<p>COURSE OF EVENTS: 
+<p> I)  Get user login status from device
+<p>ALTERNATIVE COURSE OF EVENTS:
+<p> I) Couldn�t access device storage, show error �Couldn�t access device memory. Check the permissions for this app�
+
+<h4 id="sec4.3">4.3 Use Case Diagram </h4>
+  <img src="HRMS_Use_case_Diagram.png">
+
+  <br> <br> <br>
+
+<h4 id="sec4.4">4.4 UML expended use case </h4>
+<h5>4.4.1: UML Expand Use Case for Login:</h5>
+-  	<p> 	1.	Use Case Name: Login.<br>
+-			2.	Type: Primary, Secondary.<br>
+-			3.	Actor(s): Admin, Landlord, Tenant.<br>
+-			4.	Brief Overview: When a user login, he come to his dashboard and if he is a new user then the system pushes his to register dashboard and after the register, he can login.<br>
+-			<h6>5.	Typical Course of Events:</h6></p>
+-			<img src="Login.png">
+-			<br><br><br>
+-	<h5>4.4.2: UML Expand Use Case for Registration:</h5>
+-  	<p>
+-  			6.	Use Case Name: Registration.<br>
+-			7.	Type: Primary.<br>
+-			8.	Actor(s): Admin, Landlord, Tenant.<br>
+-			9.	Brief Overview: Every user must register to use this system. He has to first register as Landlord or Tenant. The registration page is different for tenant and landlord.<br>
+-			<h6>10.	Typical Course of Events:</h6></p><br>
+-
+-			<img src="Registration.png">
+-			<br><br><br>
+-
+-	<h5>4.4.3: UML Expand Use Case for Search Apartment:</h5>
+-  	<p>
+-  			11.	Use Case Name: Apartment.<br>
+-			12.	Type: Primary.<br>
+-			13.	Actor(s): Tenant.<br>
+-			14.	Brief Overview: When a user search for a apartment the system ask his to fill up his requirements like rent amount, number of rooms, number of washrooms, place and after that the system show suitable apartments.<br>
+-			<h6>15.	Typical Course of Events:</h6>
+-			<img src="Search_apartment.png">
+-			<br><br><br>
+-
+-	<h5>4.4.4: UML Expand Use Case for Select Apartment:</h5>
+-  	<p>		
+-  			16.	Use Case Name: Select Apartment.<br>
+-			17.	Type: Primary.<br>
+-			18.	Actor(s): Tenant.<br>
+-			19.	Brief Overview: When a tenant selects an apartment he likes, he shows all the information of the apartment like rent, rooms pictures, etc. If he chooses the apartment then he can confirm his reservation though reservation button.<br>
+-			<h6>20.	Typical Course of Events:</h6></p>
+-			<img src="Select_apartment.png">
+-			<br><br><br>
+-
+-	<h5>4.4.5: UML Expand Use Case for Reservation Apartment:</h5>
+-  	<p>		
+-  			21.	Use Case Name: Reservation Apartment.<br>
+-			22.	Type: Primary.<br>
+-			23.	Actor(s): Tenant.<br>
+-			24.	Brief Overview: When a tenant wants to reserve an apartment, he first has to fill up all his information with NID number and after fill up the information he has to press confirm button, then a message go to landlord and he contact with the tenant.<br>
+-			<h6>25.	Typical Course of Events:</h6></p>
+-			<img src="Reservation_apartment.png">
+-			<br><br><br>
+-
+-	<h5>4.4.6: UML Expand Use Case for Report to Landlord:</h5>
+-  	<p>		
+-  			26.	Use Case Name: Report to Landlord.<br>
+-			27.	Type: Primary.<br>
+-			28.	Actor(s): Tenant.<br>
+-			29.	Brief Overview: Tenant can complain about anything of the apartment through report option.<br>
+-			<h6>30.	Typical Course of Events:</h6></p><br>
+-			<img src="Report to landlord.png">
+-			<br><br><br>
+
+      
+  <h5>4.4.7: UML Expand Use Case for Apartment Advertise:</h5>
+  <p>   1.	Use Case Name: Apartment Advertise. <br>
+    2.	Type: Primary. <br>   
+    3.	Actor(s): Landlord.  <br>
+    4.	Brief Overview: Only landlord can upload or edit apartment advertise using this option.  <br>
+  <h6> 5.	Typical Course of Events:  </h6>
+  <img src= "Apartment Advertise.png" >
+  <br><br><br>  
+
+  <h5>4.4.8: UML Expand Use Case for Remove Advertise:</h5>
+  <p>    6.	Use Case Name: Remove Advertise.<br>
+    7.	Type: Primary. <br>
+    8.	Actor(s): Admin, Landlord.  <br>
+    9.	Brief Overview: Landlord and Admin can remove an advertise from this option. <br>
+  <h6> 10.	Typical Course of Events:  </h6>
+  <img src= "Remove Advertise.png">
+  <br><br><br>  
+
+
+  <h5>4.4.9: UML Expand Use Case for View Report from Tenant:</h5>
+  <p>   11.	Use Case Name: View report from tenant. <br>
+    12.	Type: Primary. <br>
+    13.	Actor(s): Landlord.<br>
+    14.	Brief Overview: If tenant can any report to landlord then landlord can solve this.<br>
+  <h6>  15.	Typical Course of Events: </h6>
+  <img src= "View Report from Tenant.png" >
+  <br><br><br>  
+
+
+
+  <h5>4.4.10: UML Expand Use Case for Maintaining Apartment Info:</h5>
+  <p>   16.	Use Case Name: Maintaining apartment information. <br>
+    17.	Type: Primary.<br>
+    18.	Actor(s): Admin.<br>
+    19.	Brief Overview: Only admin can maintain this. If admin upload any wrong info, then admin can change it easily.<br>
+  <h6>  20.	Typical Course of Events: </h6>
+  <img src= "Maintaining Apartment Info.png">
+  <br><br><br>  
+
+
+
+  <h5>4.4.11: UML Expand Use Case for View Monthly Bill Report:</h5>
+  <p>   21.	Use Case Name: View monthly bill report.	 <br>
+    22.	Type: Primary. <br>
+    23.	Actor(s): Admin, Tenant, Landlord.<br>
+    24.	Brief Overview: Landlord can show all the payment. After see that landlord can contact to tenant. <br>
+  <h6>  25.	Typical Course of Events: </h6>
+  <img src= "View Monthly Bill Report.png" >
+  <br><br><br>  
+ 
+      
+
+	
+
+
+
+<h2 style="color:#00C569;">5. Other Nonfunctional Requirements</h2>
+        <h4 id="sec5.1">5.1 Performance Requirements</h4>
+        <p>There are no specific performance requirements for this application. But, the real-time systems for messaging, VoIP service, and client-shop owner cart systems should be designed in such a way that there is no significant time delay in the application. The responsive UI has to perform precisely to ensure a smooth user experience.</p>
+        
+        
+
+
+
+
+        <h4 id="sec5.2">5.2Safety Requirements</h4>
+        <p>There are no specific performance requirements for this application. But, the real-time systems for messaging, VoIP service, and client-shop owner cart systems should be designed in such a way that there is no significant time delay in the application. The responsive UI has to perform precisely to ensure a smooth user experience.</p>
+        <h4 id="sec5.3">5.3 Security Requirements</h4>
+        <p>The users must have to verify their identity and provide authentic information for creating an application account. Each user must have their own user account to use the application. All kinds of user data will be kept safe, and the system will not enclose any user information without user concern. That will ensure data privacy. Moreover, the authentic users only system will provide security among the users of the application</p>
+
+        <h4 id="sec5.4">5.4 Software Quality Attributes</h4>
+        <p>The requirements in this section specify the required reliability, availability, and maintainability of the software system.
+
+        <h4 id="sec5.5">5.5 Business Rules</h4>
+        <p>The users will be provided with the freemium version of the application by default. The free version may contain ads. The users can upgrade their accounts, which will grant the premium version of the application with some extra services and free of ads. The migration to the premium version will be a onetime purchase for all the users. </p>
+
+
+
+
+        <br><br><br>
+
+        <h2 style="color:#00C569;">6. Other Requirements</h2>
+        <p> Backup and Recovery: Keep proper system wide backups and the backup cycle should be regular and frequent enough.
+        <h4 id="section6">Appendix A: Glossary</h4>
+        <li>API: Application Protocol Interface. This is the part of a program that lets other programs or services interact with the data in the former and viceversa.
+        <li>Framework: It is like the base of a program that provides generic functionality but can be custom built for specific purposes
+        <li>Backend: The part of an app service that works behind the scenes away from the user's device, usually in the cloud (server computer owned by the company)
+        <li>Proprietary: Owned by that particular company/person etc
+        </li>
+        <br>
+<h4 id="section6">Appendix B: Analysis Models</h4>
+<p> We plan to include class diagrams after the prototype is finished.
+
+<br><br><br>
+      
+      <div style="padding-top:20px;" class="row">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
