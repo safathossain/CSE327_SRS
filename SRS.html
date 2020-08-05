@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <title>System Requirement Specification</title>
+  <title>Software Requirement Specification</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -28,7 +28,7 @@
  
   <img style="width:15%"></img>
   <header class="page header text-white"><h1 style="padding-left:10px;
-     color: #00C569;">System Requirement Specification </h1></header>
+     color: #00C569;">Software Requirement Specification </h1></header>
 
   <!-- Links -->
 
@@ -109,14 +109,16 @@
     </nav>
 
     <div style="padding-top:30px; padding-left:30px; padding-right:150px;" class="col-sm-10 col-8">
-
+	
+	
+	
+	<!-- Section-1 -->
+	
         <h2 style="color:#00C569;">1. Introduction</h2>
         <h4 id="sec1.1">1.1 Purpose</h4>
-        <p>The proposed system 1 is a platform between small local businesses and at home
-          customers to connect and interact with each other. In a way the system is an attempt to
-          virtualize the typical interactions between the two party. The inspiration for this project is to
-          reduce the necessity of going outside for day-to-day household products during the
-          pandemic.
+        <p>“Find a store” system is a platform between small local businesses and at home customers to connect and interact with each other. In 
+        a way the system is an attempt to virtualize the typical interactions between the two party. The inspiration for this project is to 
+        reduce the necessity of going outside for day-to-day household products during the pandemic.
         <h4 id="sec1.2">1.2 Document Convention</h4>
         <p>The document is written following the IEEE template for SRS (Software
           Requirement Specification). The headers, sub-headers, paragraphs are written as follows: <br><br>
@@ -127,7 +129,6 @@
           are given in italic with their serial numbers as superscript and a table is used in Section-4
           to list the actions and system responses under extended use cases of each feature and on
           Section 2.3 to show user classes and their pertinent characteristics.</p>
-        <h4 id="sec1.3">1.3 Intended Audience and Reading Suggestions</h4>
         <p> The primary intended audience of this SRS document are the project team
           members and our course instructor. It should also be understandable to knowledgable
           technical person such as software developers and software industry business
@@ -137,26 +138,34 @@
           shop-owners 3 . Interaction between the two parties will be done using the two apps. The
           system also consists of a website that enables customers 2 to view and post reviews and
           shop-owners 3 to view their transactions analytics. The goals and objectives of the system
-          are stated below, <br>
-          Goals (what we hope to achieve): <br><br>
-          (i) Substitute/reduce the need for going outside to get day-to-day household items from
-          local stores; particularly- stationary stores, bakeries, convenience stores. <br>
-          (ii) Virtualize the existing interaction between the two party. <br>
-          (iii) Ensure desirable user experience and user expected reliability. <br>
+          are stated below,</p> 
+          <p>Goals (what we hope to achieve):</p>
+          <ul>
+          	<li> Substitute/reduce the need for going outside to get day-to-day household items from
+          local stores; particularly- stationary stores, bakeries, convenience stores. </li>
+          	<li> Virtualize the existing interaction between the two party. </li>
+          	<li> Ensure desirable user experience and user expected reliability. </li>
+          </ul>
           
-          Objectives (how we hope to achieve the goals): <br>
-          (i) Mimic the well-known traditional behaviors between customers 2 and shop-owners 3
-          through the android app and website wherever possible. <br> 
-          (ii) Include features that are easy to use and understand such as- connect customers &amp;
+          <p>Objectives (how we hope to achieve the goals):</p>
+          <ul>
+          	<li> Mimic the well-known traditional behaviors between customers 2 and shop-owners 3
+          through the android app and website wherever possible. </li> 
+          	<li> Include features that are easy to use and understand such as- connect customers &amp;
           shop-owners through voice call, form a queue when multiple customers at a shop, take
-          available items input by scanning barcodes etc. (Broadly discussed in section-4) <br>
-          (iii) Design UI components following the designs of existing popular app and websites.</p> 
-
+          available items input by scanning barcodes etc. (Broadly discussed in section-4) </li>
+          	<li> Design UI components following the designs of existing popular app and websites.</li> 
+	  </ul>
         <h4 id="sec1.5">1.5 References</h4>
-            Google.com
+            <p> [1]"Device compatibility overview  |  Android Developers", Android Developers, 2020. [Online]. Available: https://
+            developer.android.com/guide/practices/compatibility#defined. [Accessed: 05- Aug- 2020]. </p>
+            <p> [2]K. Panetta, "Gartner Top 10 Strategic Technology Trends for 2020", Smarter With Gartner, 2020. [Online]. Available: https://
+            www.gartner.com/smarterwithgartner/gartner-top-10-strategic-technology-trends-for-2020/. [Accessed: 05- Aug- 2020]. </p>
         <br><br><br>
 
-        <!-- Descriptions edited -->
+
+
+        <!-- Section-2 -->
 
         <h2 style="color:#00C569;">2. Overall Description</h2>
         <p> 
@@ -166,26 +175,31 @@
           customers from home can connect with local shops to get day-to-day necessary items,
           while small businesses struggling dearly due to lock-down can continue business. A
           simple diagram of the overview of the whole system is given below,</p>
+        
+        
         <h4 id="sec2.2">2.2 Product Functions</h4>
-        <p>The major features of the system are as follows, <br>
-           Register shop-owner accounts &amp; customer accounts. <br>
-           Customers can find shops nearby from map or search for shops by items. <br>
-           Shop-owners entry items by scanning product barcode or image to text conversion
-          from product sticker. <br>
-           Customers enter shops wait in queue(if any), browse items &amp; chat with other
-          customers while waiting.<br>
-           Orders are placed and finalized over voice call (app-to-app) between customers &amp;
-          shop-owners.<br>
-           Shop-owners allow and restrict staff accounts with appropriate functionalities.<br>
-           System suggestion of efficient delivery sequence.<br>
-           Shop-owners and customers view reviews given by customers.<br>
-           Present transaction analytics to shop-owners.</p>
+        <p>The major features of the system are as follows,
+        <ul>
+          <li> Register shop-owner accounts &amp; customer accounts. </li>
+          <li> Customers can find shops nearby from map or search for shops by items. </li>
+          <li> Shop-owners entry items by scanning product barcode or image to text conversion
+          from product sticker. </li>
+          <li> Customers enter shops wait in queue(if any), browse items &amp; chat with other
+          customers while waiting.</li>
+          <li> Orders are placed and finalized over voice call (app-to-app) between customers &amp;
+          shop-owners.</li>
+          <li> System suggestion of efficient delivery sequence.</li>
+          <li> Shop-owners and customers view reviews given by customers.</li>
+          </ul>
+          </p>
+        
+        
         <h4 id="sec2.3">2.3 User Classes and Characteristics</h4>
-        <p>Three type of users will interact with our system’s app and website- customer, shop-
-          owner, staff. On the basis of their characteristics further divisions can be made, <br>
-          Based on technical expertise: <br> </p>
+        <p>Two type of users will interact with our system’s app and website- customer, shop-owner. On the basis of their characteristics 
+        further divisions can be made,</p>
+          <p><u>Based on technical expertise</u>: </p>
         <p><table style="width:100%">
-          <tr>
+          <tr align="center">
             <th>User class</th>
             <th>Characteristic</th> 
             <th>Example</th>
@@ -220,66 +234,77 @@
         </table>
         </p>
         
-        <p>Based on shop-owner app functionality privilege: <br>
-          1. Shop-owners – The user who signs up a shop from the app. All app/website
-privilege is granted. <br>
-2. Staff – Shop-owner assigned users working with features for a registered shop app
-such as entry items, connect to customers, conduct deliveries etc that are allowed
-by shop-owners as well.
+        <p><u>Based on Shop type</u>: </p>
+          Initially app consists of three shop types- convenience stores, stationary stores and bakeries. Accordingly the shop-owner account 
+          types can be though of these three types as well.
         </p>
 
+        
         <h4 id="sec2.4">2.4 Operating Environments</h4>
-        <p>Android App sty:  <br>
-          (i) Device Hardware – (i) “Android compatible” device.
-          ref: https://developer.android.com/guide/practices/compatibility#defined <br>
-          (ii) Screen width 4’’ – 6’’, typical phone screen. <br>
+        <p><u>Android App</u>:</p>  
+        <ol>
+          <li>Device Hardware – 
+          	<ul>
+          	<li> “Android compatible” device.[1] </li>
+          	</ul>
           
-          (ii) Operating System – Android 5.1 (Lolipop) or above. <br>
-          (iii) Software Component – Google Play Services, Sinch Android SDK. <br>
-          
-          Website: Any browser that runs html, css and javascript.</p>
+          <li> Operating System – Android 5.1 (Lolipop) or above. </li>
+          <li> Software Component – Google Play Services, Sinch Android SDK. </li>
+        </ol>
+          <p><u>Website</u>: Any browser that runs html, css and javascript.</p>
+        
+        
         <h4 id="sec2.5">2.5 Design and Implementation Constraints</h4>
-        <p> <ul> Shop-owner account’s legitimacy is a concern, since anyone can register.
-          Although we have phone number verification at sign-up implemented. <br>
-           Reliability of delivery and receiving is completely up to the users. The app is
-          merely a medium for confirmation. <br>
-           The basic (free) version API/SDKs, database, hosting service that are used
+        <p><ul>
+        	<li> Shop-owner account’s legitimacy is a concern, since anyone can register.
+          Although we have phone number verification at sign-up implemented. </li>
+          	<li> Reliability of delivery and receiving is completely up to the users. The app is
+          merely a medium for confirmation. </li>
+          	<li> The basic (free) version API/SDKs, database, hosting service that are used
           allow a threshold amount of usage. It is important to note that their
-          functionalities are essential for the system. <br>
-           Since the Android OS is open-source, it’s implementation differs from
+          functionalities are essential for the system. </li>
+          	<li> Since the Android OS is open-source, it’s implementation differs from
           manufacturer to manufacturer. Certain features of our app may not function
-          smoothly due to restrictions put in the OS implementation. <br>
-           The App requires user permission for working with components like- fetching
-          location, microphone-speaker access, camera access etc.
-           The core features require continuous active internet connection. <br>
-           Majority of the target users for the system are technophobe, technology-shy
-          people. Acceptability of the designed UI/UX is uncertain.</ul>  </p>
+          smoothly due to restrictions put in the OS implementation. </li>
+          	<li> The App requires user permission for working with components like- fetching
+          location, microphone-speaker access, camera access etc.</li>
+          	<li> The core features require continuous active internet connection. </li>
+          	<li> Majority of the target users for the system are technophobe, technology-shy
+          people. Acceptability of the designed UI/UX is uncertain.</li>
+        
+        </ul></p>
+        
+        
         <h4 id="sec2.6">2.6 User Documentation</h4>
         <p>A demo video of the app and website usage will be available to the users. No
           documented manual is to be provided.</p>
+        
+        
         <h4 id="sec2.7">2.7 Assumptions and Dependencies</h4>
         <p>Assumptions: <br>
         <ul>
-           Users will adhere to their consents made using the app. Such as- shop-
-owners will deliver and customers will pay on delivery according to their
-mutual consent, customers and shop-owner provide their actual home/store
-address etc. <br>
- Customers &amp; shop-owners phones have working microphone, speaker
-and/or headphone/earphone connectibility. <br>
- Shop-owners and staff account (if allowed) holders to have a working
-camera on
-phone that is compatible for working with scanning and text detection tools
-used. <br>
+          	<li> Users will adhere to their consents made using the app. Such as- shop-
+          	owners will deliver and customers will pay on delivery according to their
+          	mutual consent, customers and shop-owner provide their actual home/store
+          	address etc. </li>
+		<li> Customers &amp; shop-owners phones have working microphone, speaker 
+		and/or headphone/earphone connectibility. </li>
+		<li> Shop-owners and staff account (if allowed) holders to have a working 
+		camera on phone that is compatible for working with scanning and text detection tools used. </li>
         </ul></p>
-        <p>Dependencies: <br>
+        <p>Dependencies:</p>
         <ul>
-           Users need to have google play services installed on their android phones
-(which is pretty common). Particularly- Barcode Scanning &amp; Text
-Recognition from ML kit, Maps SDK, Fused Location API.
-        </ul></p>
+        	<li>Users need to have google play services installed on their android phones
+        	(which is pretty common). Particularly- Barcode Scanning &amp; TextRecognition from ML kit, Maps SDK, Fused Location API.</li>
+        </ul>
+
+<br><br><br>
 
 
-<!-- no 3 -->
+
+	<!-- Section-3 -->
+
+
  <h2 style="color:#00C569;">3. External Interface</h2>
         <h4 id="sec3.1">3.1 User Interfaces</h4>
         <p>The UI of the app is designed in such a way that any user can interact with the application comfortably. When the user launches the app for the first time, the landing page welcomes the user with "Sign Up (Get Started)" or "Sign In" option.
@@ -330,11 +355,10 @@ Recognition from ML kit, Maps SDK, Fused Location API.
         <h4 id="sec3.4">Communications Interfaces</h4>
         <p>Real-time voice protocol (RTP) is used in this application for VoIP service, which allows the users to make calls using internet connections. For chatting or messaging, Firebase Cloud Message (FCM) is used, which ensures data protection (GDPR) and encryption.</p>
         <br><br><br>
-
-        <!--System Features-->
         
 
-    
+
+    <!-- Section-4 -->
 
 
 <h2 style="color:#00C569;">4. System Features</h2>
@@ -1221,7 +1245,7 @@ home.</p>
 
 
 
-        <h4 id="sec5.2">5.2Safety Requirements</h4>
+        <h4 id="sec5.2">5.2 Safety Requirements</h4>
         <p>There are no specific performance requirements for this application. But, the real-time systems for messaging, VoIP service, and client-shop owner cart systems should be designed in such a way that there is no significant time delay in the application. The responsive UI has to perform precisely to ensure a smooth user experience.</p>
         <h4 id="sec5.3">5.3 Security Requirements</h4>
         <p>The users must have to verify their identity and provide authentic information for creating an application account. Each user must have their own user account to use the application. All kinds of user data will be kept safe, and the system will not enclose any user information without user concern. That will ensure data privacy. Moreover, the authentic users only system will provide security among the users of the application</p>
@@ -1237,17 +1261,68 @@ home.</p>
 
         <br><br><br>
 
-        <h2 style="color:#00C569;">6. Other Requirements</h2>
-        <p> Backup and Recovery: Keep proper system wide backups and the backup cycle should be regular and frequent enough.
-        <h4 id="section6">Appendix A: Glossary</h4>
-        <li>API: Application Protocol Interface. This is the part of a program that lets other programs or services interact with the data in the former and viceversa.
-        <li>Framework: It is like the base of a program that provides generic functionality but can be custom built for specific purposes
-        <li>Backend: The part of an app service that works behind the scenes away from the user's device, usually in the cloud (server computer owned by the company)
-        <li>Proprietary: Owned by that particular company/person etc
-        </li>
-        <br>
-<h4 id="section6">Appendix B: Analysis Models</h4>
-<p> We plan to include class diagrams after the prototype is finished.
+        <h2 style="color:#00C569;" id="section6">6. Other Requirements</h2>
+        <p> One extra requirement of this project is to be inline with the latest technology trends and make sure it is a software worthy of the 
+        next era. We have taken global research and advisory firm - Gartner’s predictions as guideline to achieve this.</p>
+        <h4> The Project in light of Gartner Top Technology Trends </h4>
+        <p>According to Gartner the leading technologies in the software industries for this era are- AI, AR, block-chain, intelligent search 
+        features. Their most recent prediction consists of 10 technology trends for the year 2020 [2], which include- hyper-automation, multi-
+        experience, human augmentation, distributed cloud, AI security etc. The “find a store” system somewhat adheres to a few of these 
+        predictions in its features. Such as- </p>
+        
+        <ol>
+        	<li><u>Multi-experience</u>: Replacing necessity of technology-literate people with people-literate technology. “Find a store” 
+        	isn’t the traditional online shop app/website. The platform lets customers and shop-owners connect and interact with each other, 
+        	with special focus to small local businesses. The system attempts to virtualize these interactions that make local small 
+        	businesses stand out. </li><br>
+        	
+        	<li><u>AI</u>:  The system uses google play services ML kit provided SDKs- barcode scanning and text recognition to ease the 
+        	product list input process for the shops.</li><br>
+        	
+        	<li><u>Distributed Cloud</u>:  The main database for the system is the Google’s Cloud Firestore which is a serverless distributed 
+        	cloud service. Distributed cloud platforms make product scale up process much easier and cost saving.</li><br>
+        </ol>
+
+        <h3>Appendix A: Glossary</h3>
+        <p><table style="width:100%">
+          <tr align="center">
+            <th>Term</th>
+            <th>Definition</th>
+          </tr>
+          <tr>
+            <td>System</td>
+            <td>The whole platform consisting of app and website.</td>
+          </tr>
+          
+          <tr>
+            <td>Customer</td>
+            <td>User using the customer-app with aim to find stores for buying day-to-day necessary items.</td>
+          </tr>
+          
+          <tr>
+            <td>Shop-owner</td>
+            <td>Small local small convenience store/stationary/bakery owner.</td>
+          </tr>
+          
+          <tr>
+            <td>Customer-Queue</td>
+            <td>A list of customers who have pressed “enter the store” button and are waiting to connect with shop-owner.</td>
+          </tr>
+          
+          <tr>
+            <td>Visible Product-List</td>
+            <td>The list of products that the shop-owners have inputted through the app. These are visible to customers through the “Browse” tab.
+            </td>
+          </tr>
+          
+          <tr>
+            <td>Purchase-List</td>
+            <td>The list of items that customers and shop-owners have agreed upon for transaction. Each item in this list has three fields- 
+            name, quantity and price.</td>
+          </tr>
+          
+          </table></p>
+
 
 <br><br><br>
       
