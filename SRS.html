@@ -83,10 +83,9 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">System Features</a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#sec4.1">Functional requirement 1</a>
-                      <a class="dropdown-item" href="#sec4.2">Functional Requirement 2</a>
-                      <a class="dropdown-item" href="#sec4.3">Use case diagram</a>
-                      <a class="dropdown-item" href="#sec4.4">UML expended use case</a>
+                      <a class="dropdown-item" href="#sec4.1">UML Use case Diagram</a>
+                      <a class="dropdown-item" href="#sec4.2">UML Extended Use Cases</a>
+                      
                      
                     </div>
                   </li>
@@ -323,7 +322,7 @@ Recognition from ML kit, Maps SDK, Fused Location API.
     
 
         <h4 id="sec3.2">3.2 Hardware Interfaces</h4>
-        <p>The device that will run the application, requires WIFI and GPS for using the map and detecting the accurate user location. The device also needs the camera for barcode and product scanning and speaker and microphone for voice call.</p>
+        <p>The device that will run the application, requires WIFI and GPS for using the map and detecting the accurate user location. The device also needs the camera for barcode, product scanning and speaker, microphone for voice call.</p>
 
         <h4 id="sec3.3">3.3 Software Interfaces</h4>
         <p>The minimum android operating system version required to run the application is "Lolipop5.1 (API level 22)".  The application will work properly on any device with the latest (from android 5.1 to 10) android operating system.</p>
@@ -333,399 +332,881 @@ Recognition from ML kit, Maps SDK, Fused Location API.
         <br><br><br>
 
         <!--System Features-->
-        <h2 style="color:#00C569;">4. System Features</h2>
-        <p>This section includes the requirements that describe all the essential functions of the system.
-        <p>The naming convention will follow the following conventions
-        <p>PFRx � Primary functional requirement
-        <p>SFRx � Secondary functional requirement
+        
 
-<h4 id="sec4.1">4.1 Functional Requirement 1 </h4>
+    
 
+
+<h2 style="color:#00C569;">4. System Features</h2>
+<p>This section includes the requirements that describe all the essential functions of the system.
+
+<br><br>
+<h4 id="sec4.1">4.1 Use Case Diagram </h4>
+<img src="image/diagram.png" style="max-width:100%;" alt="Diagram">
+
+
+
+<br><br><br>
+<h4 id="sec4.2">4.2.1 Create an account </h4> 
+<p> <u>Use case name</u>: Create an account</p>
+<p> <u>Use case type</u>: Primary.</p>
+<p> <u>Actors</u>: Customer, Shop-owner.</p>
+<p> <u>Brief Description</u>: Sign up by providing necessary information with the app.</p>
+
+<table>
+  <caption align= "center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b></caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Open the app.</td>
+    <td>1. Check if this is the first time. If so, show get started page. (customer UI link, shop-owner UI link)</td>
+  </tr>
+
+  <tr>
+    <td>2. Select get started and enter phone number.</td>
+    <td>2. Show phone number entry page. (customer UI link, shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>3. Enter phone number and press verify. </td>
+    <td>3. Record phone number and send sms with verification code show enter verification code page with a timer. (customer UI
+    link, shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>4. Enter verification code.</td>
+    <td>4. Check entered code then show profile setup page.</td>
+  </tr>
+
+  <tr>
+    <td>5. Enter necessary information.</td>
+    <td>5. Store given information.</td>
+  </tr>
+
+  <tr>
+    <td>6. Press the home/store address text box.</td>
+    <td>6. Show map with a dragable map icon and search bar at top.</td>
+  </tr>
+
+  <tr>
+    <td>7. Search for a place using the search bar and press enter.</td>
+    <td>7. Navigate map view to selected location.</td>
+  </tr>
+
+  <tr>
+    <td>8. Move dragable map icon and select desired location.</td>
+    <td>8. Go back to sign up page fill the address text box with address of that location.</td>
+  </tr>
+
+  <tr>
+    <td> 9. Click the sign up button.</td>
+    <td> 9. Show loading dialog, store all info to database and then show home screen.</td>
+  </tr>
+
+</table>
+<br>
+
+  <p style=" text-align: center;"> <b>Alternate Course of Action</b>
+  </p>  
+  <p>6.1 User inputs invalid phone number, show toast “invalid number” and a red exclamation mark on the input text box.</p>
+  <p>8.1 Verification code entry duration times out. Go back to phone number entry page.</p>
+  <p>8.2 Wrong verification code entered. Show toast “invalid code” and turn the text box red.</p>
+  <p>8.3 User attempts to enter wrong verification and/or timer times out a threshold number of times (this is set by the
+  authentication api used). Show error dialog “too many attempts! try again at least 24 hours later” and close the app.</p>
+  <p>8.4 User doesn’t receive any code in set duration, user requests a resend code. The process is repeated.</p>
+  <p>14.1 Can’t find the searched location, show “can’t find this location. try selecting from the suggestions” toast.</p>
+  <p>17.1 Empty input fields and/or invalid entries. Mark the corresponding input fields in red and show “invalid input” on
+  each field.</p>
+
+  <br><br>
+
+  <h4 id="sec4.2.2">4.2.2 Login & Logout </h4>
+  <p> <u>Use case name</u>: Login, logout</p>
+  <p> <u>Use case type</u>: Primary.</p>
+  <p> <u>Actors</u>: Customer, Shop-owner.</p>
+  <p> <u>Brief Description</u>: Login to the app with registered username/phone number and password.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Open the app.</td>
+    <td>1. Check if this is the first time. If not, show login page. (customer UI link, shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Enter username/phone number and password.</td>
+    <td>2. Check the username/phone number and password. Show home page. (customer UI link, shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>3. Pick the show menu option.</td>
+    <td>3. Show the menu page. (customer UI link, shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>4. Pick Settings→Logout.</td>
+    <td>4. Logout user. Show login page.</td>
+  </tr>
+</table>
+
+  <br>
+  
+  <p style=" text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+
+  <p>4.1 Username/phone number and passwords don’t match any user registered. Show toast “wrong username and/or password.
+  check please.” make the input fields border red.</p>
+  <p>4.2 No internet connection. Show toast “You are not connected to the internet!”.</p>
+
+  <br><br>
+
+
+
+<h4 id="sec4.2.3">4.2.3 Set Store’s Service Status </h4>
+<p> <u>Use case name</u>: Set store’s service status.</p>
+<p> <u>Use case type</u>: Secondary (default status is automatically set to “Open”).</p>
+<p> <u>Actors</u>: Shop-owner.</p>
+<p> <u>Brief Description</u>: After login/sign-up, shop-owners can set current service status of the store- open, busy or closed. The status is
+reflected on the customer app’s map with colored dots: open = green, busy = yellow, closed = red.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here. But to get
+    to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>1. Default service status is set to “Open”. Present the home screen with two tabs and a menu option on top left.
+    (shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Pick the show menu option→ settings.</td>
+    <td>2. Show menu page then settings page. (shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>3. Edit the status field.</td>
+    <td>3. Show a drop down with statuses- active, busy, closed.</td>
+  </tr>
+  </table>
+
+<br>
+<p  style="text-align: center;"> <b>Alternate Course of Action</b>
+</p>
+<p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here. But
+to get to this point login or sign up must be completed first.)</p>
+<p>None.</p>
+
+<br><br>
+
+<h4 id="sec4.2.4">4.2.4 Entry products info for the visible Product-List. </h4>
+<p> <u>Use case name</u>: Entry products for the visible product list.</p>
+<p> <u>Use case type</u>: Primary.</p>
+<p> <u>Actors</u>: Shop-owner.</p>
+<p> <u>Brief Description</u>: Upon successful login/signup the shop-owners can input products that will be visible to customers when they enter. Note
+that, the product-list won’t necessarily contain all the items sold in the shop, it’ll contain especially items that are
+rare to find however, this is up to the shop-owner.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+  <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2 these
+    are not repeated here. But to get
+    to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>1. Show the home page for shop-owner app, which is a page with two tabs- Customer queue, Product list. (shop-owner UI
+    link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Press “Product-list” tab.</td>
+    <td>2. Show the product-list page containing currently listed products or is empty. (shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>3. Press the “+” button.</td>
+    <td>3. Open up camera asking to point to product barcode.</td>
+  </tr>
+
+  <tr>
+    <td>4. Take picture with barcode inside target area.</td>
+    <td>4. Show “processing…” dialog. Scan barcode and find product name ask shop-owner for quantity and price/unit.</td>
+  </tr>
+
+  <tr>
+    <td>5. Input quantity and price/unit.</td>
+    <td>5. Add new product item entry to product-list.</td>
+  </tr>
+</table>
+
+<br>
+<p style="text-align: center;"> <b>Alternate Course of Action</b>
+</p>
+<p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+  But
+  to get to this point login or sign up must be completed first.)</p>
+<p>6.1 Camera access permission is not granted. Ask for user permission, but first present a dialog box with explanation
+why the camera access permission is required. If user still doesn’t grant permission, present a text input field for
+entering by typing manually.</p>
+<p>8.1 Picture taken doesn’t contain the barcode was not inside the target area. Show toast “failed to scan barcode. make
+sure the barcode is inside the square marked area.”</p>
+<p>8.2 The product info for the barcode scanned was not found by the API used. Ask user to take image of the front cover of
+the product and get the product name from there and show to user, this deduced name entry will be editable by the user.</p>
+
+
+
+
+
+<br><br>
+
+<h4 id="sec4.2.5">4.2.5 Browse Nearby Stores from Map. </h4>
+<p> <u>Use case name</u>: Browse nearby stores from map.</p>
+<p> <u>Use case type</u>: Primary.</p>
+<p> <u>Actors</u>: Customer.</p>
+<p> <u>Brief Description</u>: After login/signup the home page of the app is shown to the customer account. This map contains all the stores that are
+nearby. Nearby meaning the customers current position is inside the store’s given perimeter.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>1. Show a page with a map with specials icons for each kind of shops. Each icon has colored dots in the bottom left to
+    indicate its state- green for open, yellow for busy and red for closed.(customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Press an icon.</td>
+    <td>2. Show the shop page consisting of three tabs- Chat, Customer Queue, Browse items. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>3. Pick the “Enter shop” button.</td>
+    <td>3. The customers name is now listed at the last of customer queue. The customer can now chat with others in queue while
+    waiting. (customer UI link).</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+  <p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+    But
+    to get to this point login or sign up must be completed first.)</p>
+    <p>6.1 The customer queue is empty. Pressing “Enter Shop” directly connects the customer with the shop-owner (upon
+    shop-owners approval).</p>
+
+
+<br><br>
+
+<h4 id="sec4.2.6">4.2.6 View the Customer-Queue </h4>
+<p> <u>Use case name</u>: View the customer queue.</p>
+<p> <u>Use case type</u>: Primary.</p>
+<p> <u>Actors</u>: Customer,Shop-owner.</p>
+<p> <u>Brief Description</u>: Shop-owner and customers both have a view of the customer queue- the list of customers waiting to connect to the
+shop-owner. Shop-owners have this view as their homepage, customer can see this after entering shops (Use case 4.5).</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Customer taps on a store icon from the map from the customer app.</td>
+    <td>1. The customer queue- list of customers who are waiting to connect with shop-owner is shown. The page has three tabs-
+    Chat, Customer Queue, Browse items; customer queue is shown first. (customer UI link)</td>
+  </tr>
+
+  <tr>
+    <td>2. Shop-owner opens the shop-owner app. (with Login/sign-up done)</td>
+    <td>2. Shop-owner is presented the customer queue. The page has two tabs- Customer Queue, Enter Items.</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+  <p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+    But
+    to get to this point login or sign up must be completed first.)</p>
+  <p>None.</p>
+<br><br>
+
+<h4 id="sec4.2.7">4.2.7 View/Browse available items in the store’s Product-List </h4>
+<p> <u>Use case name</u>: View/browse available items in the store’s product-list.</p>
+<p> <u>Use case type</u>: Secondary. (This action is optional)</p>
+<p> <u>Actors</u>: Customer.</p>
+<p> <u>Brief Description</u>: After login/sign-up and then picking a shop-icon customers can view the items listed in the shop’s product-list.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>1. Show a page with a map with specials icons for each kind of shops. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Press an icon.</td>
+    <td>2. Show the shop page consisting of three tabs- Chat, Customer Queue, Browse items. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>3. Pick “Browse” tab</td>
+    <td>3. Present all the items listed in the shop.</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+  <p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+    But
+    to get to this point login or sign up must be completed first.)</p>
+  <p>6.1 The product-list is empty. Show “Nothing to show” written on the browse page.</p>
+  
+  
+  <br><br>
+
+
+
+<h4 id="sec4.2.8">4.2.8 Chat with others on the Customer Queue </h4>
+<p> <u>Use case name</u>: Chat with others on the customer queue.</p>
+<p> <u>Use case type</u>: Secondary. (This action is optional)</p>
+<p> <u>Actors</u>: Customer.</p>
+<p> <u>Brief Description</u>: After login/sign-up, picking a shop-icon and then pressing “enter shop” customers can chat with others on the queue
+while waiting.</p>
+
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>1. Show a page with a map with specials icons for each kind of shops. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Press an icon.</td>
+    <td>2. Show the shop page consisting of three tabs- Chat, Customer Queue, Browse items. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>3. Pick “Enter shop” button.</td>
+    <td>3. The customers name is now listed at the last of customer queue and can now chat with others in queue while waiting.
+    (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>4. Pick “Chat” tab.</td>
+    <td>4. Present a global chat page where all messages shared publicly are visible.</td>
+  </tr>
+
+  <tr>
+    <td>5. Write a message and click send.</td>
+    <td>5. Show the message at top of the chat page.</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+  <p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+    But
+    to get to this point login or sign up must be completed first.)</p>
+  <p>6.1 The customer queue is empty. Pressing “Enter Shop” directly connects the customer with the shop-owner (upon
+  shop-owners approval).</p>
+  
+  
+  <br><br>
+
+
+  <h4 id="sec4.2.9">4.2.9 Connect Customers and Shop-owners via App-to-App Voice Call </h4>
+  <p> <u>Use case name</u>: Connect customers and shop-owners via app-to-app voice call.</p>
+  <p> <u>Use case type</u>: Primary.</p>
+  <p> <u>Actors</u>: Customer, Shop-owner.</p>
+  <p> <u>Brief Description</u>: Shop-owners and customers are connected to each other via app-to-app voice call. Through their conversation the purchase
+  list will be setup and confirmed.</p>
+
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Customer picks the “Enter shop” button from customer app.</td>
+    <td>1. The customers name is now listed at the last of customer queue. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Shop-owner selects “Next customer” from shop-owner app.</td>
+    <td>2. A call is initiated between the customer at top of the customer queue and shop-owner.</td>
+  </tr>
+
+  <tr>
+    <td>3. The users talk from both end.</td>
+    <td>3. Each user’s voice transfers from one end to other simultaneously. The call screen is shown with- purchase list, call
+    options, duration of call (common UI link).</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+  <p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+    But
+    to get to this point login or sign up must be completed first.)</p>
+  <p>6.1 Call is disconnected due to internet disruption, the API handles this by waiting for a certain amount of time and
+  then trying to reconnect. The call is disconnected and the users are notified with a dialog “Unfortunately the call was
+  disrupted, please check your internet connection”.</p>
+  
+  
+  <br><br>
+
+  <h4 id="sec4.2.10">4.2.10 Enter/Edit Purchase List (item,quantity, price) while in call </h4>
+  <p> <u>Use case name</u>: Enter/edit purchase list (item,quantity, price) while in call</p>
+  <p> <u>Use case type</u>: Primary.</p>
+  <p> <u>Actors</u>: Customer, Shop-owner.</p>
+  <p> <u>Brief Description</u>: After the call between customer & shop-owner has been initiated, during their conversation an editable list will be
+  presented to both. They can collaboratively make up this list together.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up, Login and Browse Nearby Stores from Map are the same as mentioned in 4.1, 4.2 and 4.5
+    respectively, these are not repeated here. But to get to these steps must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Customer picks the “Enter shop” button from customer app.</td>
+    <td>1. The customers name is now listed at the last of customer queue. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Shop-owner selects “Next customer” from shop-owner app.</td>
+    <td>2. A call is initiated from both customer and shop-owner ends.</td>
+  </tr>
+
+  <tr>
+    <td>3. Customers/shop-owner click the “+” button.</td>
+    <td>3. A new entry item is added to list. (common UI link).</td>
+  </tr>
+
+  <tr>
+    <td>4. Both users edit the input filed.</td>
+    <td>4. The edit changes are shown to both party in real-time.</td>
+  </tr>
+
+  <tr>
+    <td>5. Confirm checkbox is clicked from both ends and one user picks “proceed”.</td>
+    <td>5. Show dialog “confirm your purchase list?” with options “yes”, “no, review”.</td>
+  </tr>
+
+  <tr>
+    <td>6. User picks “yes”.</td>
+    <td>6. The purchase list is finalized and the order is recorded on both end.</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+  <p>(Alternate course of action for Sign-up, Login and Browse Nearby Stores from Map are the same as mentioned in 4.1, 4.2
+  and 4.5 respectively, these are not repeated here. But to get to these steps must be completed first.)</p>
+  <p>8.1 Both users attempt to edit same field together. The customer is given precedence inputting the product name,
+  quantity input field and the price input field is only filled by the shop-owner.</p>
+  <p>10.1 One of the user picks “hang up” with the “Confirm” checkbox unchecked, show that user a dialog saying “Are you sure
+  you want to hang up before confirming the purchase list?” and options “yes, hang up”, “no”. Picking “yes, hang up” then
+  disconnects the call and notifies the other user that the call has been disconnected.</p>
+  <p>10.2 One of the user picks “proceed” with the other user’s “Confirm” checkbox unchecked, show the user who picked “hang
+  up” a dialog saying “The purchase list hasn’t been confirmed from the other end, please wait”.</p>
+  
+  <br><br>
+
+
+  <h4 id="sec4.2.11">4.2.11 Search for Store by Item </h4>
+  <p> <u>Use case name</u>: Search for stores by item.</p>
+  <p> <u>Use case type</u>: Primary.</p>
+  <p> <u>Actors</u>: Customer.</p>
+  <p> <u>Brief Description</u>: Using the search bar on top of the customer app’s home page customers can search for stores by giving input an (one)
+  item name. The input can be given through voice.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>1. Show a page with a map with specials icons for each kind of shops. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Give input in the search bar by speaking or typing.</td>
+    <td>2. Show loading dialog as the system searches each nearby stores database for the item (customer UI link). Mark the borders
+    of found stores. (customer UI link).</td>
+  </tr>
+</table>
+
+<br>
+<p style="text-align: center;"> <b>Alternate Course of Action</b>
+</p>
+<p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here. But
+to get to this point login or sign up must be completed first.)</p>
+<p>4.1 Searched item not found on any nearby store database. Show “item not found in any stores nearby” dialog.</p>
+
+<br><br>
+
+
+<h4 id="sec4.2.12">4.2.12 View and Confirm Pending Deliveries </h4>
+<p> <u>Use case name</u>: View and Confirm pending deliveries.</p>
+<p> <u>Use case type</u>: Primary.</p>
+<p> <u>Actors</u>: Customer.</p>
+<p> <u>Brief Description</u>: Customers confirm deliveries upon receiving items, shop-owners are alerted when confirmation is made.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Shop-owner/customer picks the “show menu” option from their app. (assuming they are already signed up and logged in)</td>
+    <td>1. The menu page is presented. (customer UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Shop-owner/customer picks “pending deliveries”.</td>
+    <td>2. A list of pending deliveries that are unconfirmed is presented. Each list item contain the corresponding store name,
+    purchase-list and a “confirm” button. (customer UI link)</td>
+  </tr>
+
+  <tr>
+    <td>3. Customer presses the confirm button.</td>
+    <td>3. A dialog box appears “Are you sure you want to confirm this order?” with button “yes”, “no”.</td>
+  </tr>
+
+  <tr>
+    <td>4. Customer presses “yes”.</td>
+    <td>4. The purchase is confirmed and removed from both customer and shop-owners pending deliveries list.</td>
+  </tr>
+</table>
+
+<br>
+<p style="text-align: center;"> <b>Alternate Course of Action</b>
+</p>
+<p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+  But to get to this point login or sign up must be completed first.)</p>
+<p>6.1 Customer picks “no”, the order remains pending.</p>
+
+<br><br>
+
+
+<h4 id="sec4.2.13">4.2.13 View and Cancel a Pending Delivery </h4>
+<p> <u>Use case name</u>: Cancel a pending delivery.</p>
+<p> <u>Use case type</u>: Secondary. (this is optional)</p>
+<p> <u>Actors</u>: Shop-owner.</p>
+<p> <u>Brief Description</u>: Shop-owners can cancel deliveries.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Shop-owner/customer picks “show menu” option from their app. (assuming they are already signed up and logged in)</td>
+    <td>1. The menu page is presented. (shop-owner UI link).</td>
+  </tr>
+
+  <tr>
+    <td>2. Shop-owner picks “pending deliveries”.</td>
+    <td>2. A list of pending deliveries that are unconfirmed is presented. Each list item contains customer name, address, purchase
+    list and a button “cancel order”.</td>
+  </tr>
+
+  <tr>
+    <td>3. Shop-owner presses “cancel order”. (before the order is confirmed)</td>
+    <td>3. A dialog saying “Are you sure you want to cancel this order?” and buttons “yes, I am sure”, “no” is shown.</td>
+  </tr>
+
+  <tr>
+    <td>4. Shop-owner presses “yes, I am sure”.</td>
+    <td>4. The order is canceled. Customer is notified.</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+  <p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here.
+    But to get to this point login or sign up must be completed first.)</p>
+  <p>6.1 Shop-owner picks “no”, the order remains pending.</p>
+  
+  <br><br>
+
+
+
+<h4 id="sec4.2.14">4.2.14 Notify Customers of Canceled Deliveries </h4>
+<p> <u>Use case name</u>: Notify customers of canceled deliveries.</p>
+<p> <u>Use case type</u>: Secondary. (this is optional)</p>
+<p> <u>Actors</u>: System.</p>
+<p> <u>Brief Description</u>: Customers are notified if/when their orders are canceled by shop-owners.</p>
+
+<br>
+<p style="text-align: center;"> <b>Typical Course of Action</b>
+</p>
+<p>System Action- Present customer with a notification saying “An order you placed was canceled, Tap to view more.”</p>
+<p>Customer taps the notification and is shown details- store name & purchase-list of the order that was canceled.</p>
+
+<br><br>
+
+
+<h4 id="sec4.2.15">4.2.15 Notify Customer/Shop-owner of Pending Deliveries </h4>
+<p> <u>Use case name</u>: Notify shop-owner/customer of pending deliveries.</p>
+<p> <u>Use case type</u>: Secondary. (this is optional)</p>
+<p> <u>Actors</u>: System.</p>
+<p> <u>Brief Description</u>: System checks and notifies customers every one hour interval if they have an order pending.</p>
+
+<br>
+<p style="text-align: center;"> <b>Typical Course of Action</b>
+</p>
+<p>System Action- Check if any deliveries are pending on an hourly basis. Show a notification saying “You have deliveries
+pending! Tap to see more”</p>
+<p>Shop-owner/customer taps the notification and is shown the pending orders page (the pending order viewing procedure is
+explained in 4.12, 4.13).</p>
+
+<br><br>
+
+
+<h4 id="sec4.2.16">4.2.16 Keep track of every deal. </h4>
+<p> <u>Use case name</u>: Keep track of every deal.</p>
+<p> <u>Use case type</u>: Secondary.</p>
+<p> <u>Actors</u>: System.</p>
+<p> <u>Brief Description</u>: System stores data regarding each deal in database. Data stored- delivery time, conversation duration, delivery
+status(completed/canceled), the purchase-list.</p>
+
+<br>
+<p style="text-align: center;"> <b>Typical Course of Action</b>
+</p>
+<p>System Action- Runs in the background and stores relevant data to database.</p>
+
+
+<br><br>
+
+
+<h4 id="sec4.2.17">4.2.17 Prompt shop-owners to Update store’s Product-List. </h4>
+<p> <u>Use case name</u>: Prompt shop-owners to update product-list.</p>
+<p> <u>Use case type</u>: Secondary.</p>
+<p> <u>Actors</u>: System.</p>
+<p> <u>Brief Description</u>: System regularly shows shop-owner a notification requesting to add to or edit the product list.</p>
+
+<br>
+<p style="text-align: center;"> <b>Typical Course of Action</b>
+</p>
+<p>System Action- Once every 3 days show notification to shop-owner “Want to update you product-list? Tap here!”.</p>
+<p>Shop-owner/customer taps the notification and is shown the shop’s product-list page from where he can add/edit items.
+(the entry/edit procedure is explained in 4.4).</p>
+
+<br><br>
+
+
+<h4 id="sec4.2.18">4.2.18 Suggest efficient Delivery Sequence. </h4>
+<p> <u>Use case name</u>: Suggest efficient delivery sequence.</p>
+<p> <u>Use case type</u>: Secondary.</p>
+<p> <u>Actors</u>: System.</p>
+<p> <u>Brief Description</u>: System comes up with an efficient delivery sequence and the pending deliveries in the shop-owner app are ordered
+accordingly.</p>
+
+<br>
+<p style="text-align: center;"> <b>Typical Course of Action</b>
+</p>
+<p>System Action- Compute and analyze the distance from shop to customer location to come up with a sequence that enables
+lowest travel distance to complete all deliveries. Using a graph algorithm.</p>
+
+<br><br>
+
+
+
+<h4 id="sec4.2.19">4.2.19 Post/View Review about a Shop </h4>
+<p> <u>Use case name</u>: Post/view review about a shop.</p>
+<p> <u>Use case type</u>: Secondary. (this is optional)</p>
+<p> <u>Actors</u>: Customer.</p>
+<p> <u>Brief Description</u>: Customers can go to the website and post or view reviews about shops they have interacted with or are nearby to their
+home.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Goes to website link.</td>
+    <td>1. Show a login page asking for username/phone number & password.</td>
+  </tr>
+
+  <tr>
+    <td>2. Enters username/phone number and password and presses Login button.</td>
+    <td>2. Check the username/phone number and password. Show home page with a list of shop name that are nearby to customer’s home
+    and/or the ones he/she has interacted with.</td>
+  </tr>
+
+  <tr>
+    <td>3. Clicks on a store from the list.</td>
+    <td>3. Show review page of the store with reviews from other users listed. Each review contains one of three tags- “good”,
+    “moderate”, “bad” and a text attached. There’s a “post a review” option at the top of the page with textbox(review
+    text), radio button (good, moderate, bad) and “post review” button.</td>
+  </tr>
+
+  <tr>
+    <td>4. Click “Post Review” after filling the input fields.</td>
+    <td>4. The review is posted and is visible to all.</td>
+  </tr>
+
+  <br>
+  <p style="text-align: center;"> <b>Typical Course of Action</b>
+  </p>
+  <p>4.1 User credentials are wrong, show error message above the form saying “Username and/or password is incorrect!” and
+  turn the text boxes red.</p>
+  <p>8.1 “Post Review” pressed without filling all the input fields, show error above the “post a review” section saying
+  “Your review must contain some description and a service quality selected” and turn the missing input field/s red.</p>
+  
+  <br><br>
+
+
+  <h4 id="sec4.2.20">4.2.20 View Shop Reviews </h4>
+  <p> <u>Use case name</u>: View shop reviews.</p>
+  <p> <u>Use case type</u>: Secondary. (this is optional)</p>
+  <p> <u>Actors</u>: Shop-owner.</p>
+  <p> <u>Brief Description</u>: Shop-owners can go to the website and view reviews on their shop posted by customers.</p>
+
+
+  <table>
+    <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+      <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+        these
+        are not repeated here. But to get
+        to this point login or sign up must be completed first.)</p>
+    </caption>
+    <tr>
+      <th>Actor Action </th>
+      <th>System Response</th>
+    </tr>
+  
+    <tr>
+      <td>1. Goes to website link.</td>
+      <td>1. Goes to website link.</td>
+    </tr>
+  
+    <tr>
+      <td>2. Goes to website link.</td>
+      <td>2. Check the strore-name/phone number and password. Show home page with all the reviews listed on their shop. Each review
+      contains one of these tags- “good”, “moderate”, “bad” and a text attached.</td>
+    </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Typical Course of Action</b>
+  </p>
+  <p>4.1 User credentials are wrong, show error message above the form saying “Store name and/or password is incorrect!” and
+  turn the text boxes red.</p>
  
 
-<p>4.1.1 Functional requirement 1.1
-<p>ID: PFR1
-<p>TITLE: User Registration
-<p>Auth: User
-<p>PURPOSE: Register the user information
-<p>OVERVIEW: Given that a user has downloaded the mobile application, or accessed the website then the user should be able to register into the system. The user must provide Name, Password, Address, Phone Number, address and user type. User type consist of 'Admin','Tenant'and 'Landlord'.
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: none
-<p>COURSE OF EVENTS: 
-<p> I) Open the application or website
-<p> II) Enter all the information
-<p> III) Click on register
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Email not match with regex, show error: �Please provide a valid email�
-<p> II) Password is less than 6 digits, show error: �Password must include at least 6 digits�
-<p> III) Any field left blank, show error: �All the fields must be filled up�
-<p> IV) User type not selected, default type will be buyer.
-<p>
-<p>4.1.2 Functional requirement 1.2
-<p>ID: PFR2
-<p>TITLE: User Login
-<p>ACTOR: User
-<p>PURPOSE: Login the user
-<p>OVERVIEW: Given that the user is already registered, the user will be able to login by providing the email and password.
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: PFR1
-<p>COURSE OF EVENTS: 
-<p> I) Select �Already Registered� button from the registration page.
-<p> II) Enter email and password
-<p> III) Click on login
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Email not exist, show error: �This email is not registered yet. Please Register first.�
-<p> II) Password does not match: �Password or email is not correct. Please retry!�  
-<p> III) Any field left blank, show error: �All the fields must be filled up�
-<p>
-<p>4.1.3 Functional requirement 1.3
-<p>ID: PFR3
-<p>TITLE: Search
-<p>Auth: User - Tenant
-<p>PURPOSE: Search for house to get
-<p>OVERVIEW: From the home page the tenant type user must be able to search for their preferred product. The search will find the match the title of the product. The user will also be able to add tags to shorten their search range.
-<p>TYPE: Primary function
-<p>PRIORITY: Medium
-<p>DEP: PFR2
-<p>COURSE OF EVENTS: 
-<p> I) Type the search keywords
-<p> II) Provide Tags (Optional)
-<p> III) Click on search
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p>I) Search keywords are empty, show error: �Please enter a keyword�
-
-<p>4.1.4 Functional requirement 1.4
-<p>ID: PFR4
-<p>TITLE: Order Product
-<p>Auth: User - tenant
-<p>PURPOSE: Order the house rent
-<p>OVERVIEW: From the product page a user will be able to click on place order. The order will be placed assuming that the payment type will be pay on delivery and address will be the address of the user.
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: PFR2
-<p>COURSE OF EVENTS: 
-<p> I) Click on Order house
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Address must be valid, Admins will check for the validity of the address and manually send SMS to the user regarding the issue.
-
-<p>4.1.5 Functional requirement 1.5
-<p>ID: PFR5
-<p>TITLE: Rate Product
-<p>Auth: User - tenant
-<p>PURPOSE: Rate and Review previously bought products
-<p>OVERVIEW:  From the Product page the user can click on �Review product� button. This will pop up a window with 5 empty stars and a comment box. The user will have to click on any star which will signify the rating based on one�s index of the star. Th user can additionally add a review comment into the box and submit the rating.
-<p>TYPE: Primary function
-<p>PRIORITY: Low
-<p>DEP: PFR2
-<p>COURSE OF EVENTS: 
-<p> I) Select a star
-<p> II) Optionally type a comment
-<p> III) Click on submit
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) No stars selected, show error: �You must rate the product from 1-5�
-
-<p>4.1.6 Functional requirement 1.6
-<p>ID: PFR6
-<p>TITLE: See AR of the product � Mobile Application only
-<p>Auth: User - Tenant
-<p>PURPOSE: See the product in real time with the camera of the mobile app
-<p>OVERVIEW:  From the product page the tenant can select the view in AR button. This bring to Product AR page. User will be able to move or rotate the product. The product will stay still in perspective of the surface.
-<p>PRIORITY: High
-<p>DEP: PFR8
-<p>COURSE OF EVENTS: 
-<p> I)  Select a product from home page
-<p> II) Click on view product in AR
-<p> III) Exit from the view
-
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Not enough light, show error: �The environment doesn�t have enough light to find a surface�
-<p>   --Wait till environment changes, before showing the product
-
-<p>4.1.7 Functional requirement 1.7
-<p>ID: PFR7
-<p>TITLE: Profile Page
-<p>Auth: User
-<p>PURPOSE: View the profile page
-<p>OVERVIEW:  Show the user information to the user. This information will include, name, email, phone number, address and user type. User will be able to modify any of this information except for the mail. 
-<p>TYPE: Primary function
-<p>PRIORITY: Low
-<p>DEP: PFR2
-<p>COURSE OF EVENTS: 
-<p> I)  Select Profile button from home
-<p> II) Select any field
-<p> III) Modify the selected field
-<p> IV) Click on update information
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Data not downloaded properly, show error: �Couldn�t connect to server, please check your internet connection and try again later!�
-<p>   -Wait till environment changes, before showing the product
-  
-<p>4.1.8 Functional requirement 1.8 
-<p>ID: PFR8
-<p>TITLE: Product Page
-<p>ACTOR: User
-<p>PURPOSE: View the Product page
-<p>OVERVIEW:  Product page can be accessed from various other views. It is assumed that this page is accessed by clicking on a product. The information regarding that product will then be shown here. User can view the details of a product from this view.
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: none
-<p>COURSE OF EVENTS: 
-<p> I)  Select a product
-<p> II) Select any functionality provided by the product page
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Product details not downloaded in time limit of 30 seconds, show error: �Couldn�t connect to server, please check your internet connection and try again later!�
-<p>   -Appear retry button
-
-<p>4.1.9 Functional requirement 1.9 
-<p>ID: PFR9
-<p>TITLE: Administrator Login
-<p>ACTOR: Admin
-<p>PURPOSE: Login the admin
-<p>OVERVIEW:  Given that the admin is already registered the admin will be able to login in trough a web portal.
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: none
-<p>COURSE OF EVENTS: 
-<p> II) Enter email/username and password
-<p> III) Click on login
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Email not exist, show error: �This email/user is not registered yet. Please Register first.�
-<p> II) Password does not match: �Password or email is not correct. Please retry!�  
-<p> III) Any field left blank, show error: �All the fields must be filled up�
-
-<p>4.1.10 Functional requirement 1.10 
-<p>ID: PFR10
-<p>TITLE: Admin Dashboard
-<p>ACTOR: Admin
-<p>PURPOSE: View the admin dashboard
-<p>OVERVIEW:  The admin dashboard will show sales overview and analytics, recent activity and latest orders.
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: PFR9
-<p>COURSE OF EVENTS: 
-<p> I)  Change order status
-<p> II) View order details
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) No order to view
-
-<p>4.1.11 Functional requirement 1.11
-<p>ID: PFR11
-<p>TITLE: Category Menu
-<p>ACTOR: Admin
-<p>PURPOSE: Add new, remove or edit existing categories
-<p>OVERVIEW:  The admin will be able to create a new category. S/He will also be able to remove or edit existing categories.
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: PFR9, PFR10
-<p>COURSE OF EVENTS: 
-<p> I)  Create a new category
-<p> II) Edit existing category
-<p> III)Remove existing category
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) No category to edit/delete
-<p> II) Category Limit reached, no more category can be added.
-
-<p>4.1.12 Functional requirement 1.12
-<p>ID: PFR12
-<p>TITLE: Product Menu
-<p>ACTOR: Admin
-<p>PURPOSE: Add new, remove or edit existing products
-<p>OVERVIEW:  The admin will be able to create a new product. S/He will also be able to remove or edit existing products. Product�s 3D model file can be uploaded as well as 2D images of the product through this menu. 
-<p>TYPE: Primary function
-<p>PRIORITY: High
-<p>DEP: PFR9, PFR10, PFR11
-<p>COURSE OF EVENTS: 
-<p> I)  Create a new Product
-<p> II) Edit existing Product
-<p> III)Remove existing Product
-<p> III) Add product description
-<p> IV) Add 2D images of the product
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) No product to edit/delete
-<p> II) Product capacity reached: �no more products can be added!�.
-<p> III) Invalid file uploaded for 2D image: �Please upload a valid file!�
-<p> IV) File size too big: �File is too large to upload� 
-
-
-<h4 id="sec4.2">4.2 Functional Requirement 2 </h4>
-<p>4.2.1 Functional requirement 2.1
-<p>ID: SFR1
-<p>TITLE: Download mobile application
-<p>ACTOR: User
-<p>OVERVIEW: A user should be able to download the mobile application through either an application store or similar service on the mobile phone. The application should be free to download.
-<p>PURPOSE: In order for a user to download the mobile application.
-<p>TYPE: Secondary function
-<p>Priority: High
-<p>DEP: None
-<p>COURSE OF EVENTS:
-<p> I) Downloads the app from google play store
-
-<p>4.2.2 Functional requirement 2.2
-<p>ID: SFR2
-<p>TITLE: Check Password
-<p>ACTOR: System
-<p>RAT: Match the password
-<p>DESC:  Match password entered by the user during login. The inserted password will be matched against the one stored in the database.
-<p>TYPE: Secondary function
-<p>PRIORITY: High
-<p>DEP: PFR2
-<p>COURSE OF EVENTS: 
-<p> I)  Get password from user
-<p> II) Get password from databases
-<p> III) Match if both the passwords are the same.
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) The errors will be handled by the view using this function
-
-<p>4.2.3 Functional requirement 2.3
-<p>ID: SFR3
-<p>TITLE: Get 3D/2D model
-<p>ACTOR: System
-<p>PURPOSE: Get the 3d model of a specified product from the database
-<p>OVERVIEW:  Search for the product id and find the 3D model from the database
-<p>TYPE: Secondary function
-<p>PRIORITY: High
-<p>DEP: none
-<p>COURSE OF EVENTS: 
-<p> I)  Get product ID
-<p> II) Search the product by its id in the database
-<p> III) Download the 3D/2D model
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Internet Connection Problem, show error �Couldn�t download the 3D model, please try again later�
-<p>   -Appear retry button
-
-
-<p>4.2.4 Functional requirement 2.4
-<p>ID: SFR4
-<p>TITLE: Check if User is logged in
-<p>ACTOR: System
-<p>PURPOSE: Check if user is already logged in
-<p>OVERVIEW: The system may need to check if the user is properly logged in in different scenarios. The login state may be cached in the running device.
-<p>TYPE: Secondary function
-<p>PRIORITY: High
-<p>DEP: PFR2
-<p>COURSE OF EVENTS: 
-<p> I)  Get user login status from device
-<p>ALTERNATIVE COURSE OF EVENTS:
-<p> I) Couldn�t access device storage, show error �Couldn�t access device memory. Check the permissions for this app�
-
-<h4 id="sec4.3">4.3 Use Case Diagram </h4>
-  <img src="HRMS_Use_case_Diagram.png">
 
   <br> <br> <br>
 
-<h4 id="sec4.4">4.4 UML expended use case </h4>
-<h5>4.4.1: UML Expand Use Case for Login:</h5>
--  	<p> 	1.	Use Case Name: Login.<br>
--			2.	Type: Primary, Secondary.<br>
--			3.	Actor(s): Admin, Landlord, Tenant.<br>
--			4.	Brief Overview: When a user login, he come to his dashboard and if he is a new user then the system pushes his to register dashboard and after the register, he can login.<br>
--			<h6>5.	Typical Course of Events:</h6></p>
--			<img src="Login.png">
--			<br><br><br>
--	<h5>4.4.2: UML Expand Use Case for Registration:</h5>
--  	<p>
--  			6.	Use Case Name: Registration.<br>
--			7.	Type: Primary.<br>
--			8.	Actor(s): Admin, Landlord, Tenant.<br>
--			9.	Brief Overview: Every user must register to use this system. He has to first register as Landlord or Tenant. The registration page is different for tenant and landlord.<br>
--			<h6>10.	Typical Course of Events:</h6></p><br>
--
--			<img src="Registration.png">
--			<br><br><br>
--
--	<h5>4.4.3: UML Expand Use Case for Search Apartment:</h5>
--  	<p>
--  			11.	Use Case Name: Apartment.<br>
--			12.	Type: Primary.<br>
--			13.	Actor(s): Tenant.<br>
--			14.	Brief Overview: When a user search for a apartment the system ask his to fill up his requirements like rent amount, number of rooms, number of washrooms, place and after that the system show suitable apartments.<br>
--			<h6>15.	Typical Course of Events:</h6>
--			<img src="Search_apartment.png">
--			<br><br><br>
--
--	<h5>4.4.4: UML Expand Use Case for Select Apartment:</h5>
--  	<p>		
--  			16.	Use Case Name: Select Apartment.<br>
--			17.	Type: Primary.<br>
--			18.	Actor(s): Tenant.<br>
--			19.	Brief Overview: When a tenant selects an apartment he likes, he shows all the information of the apartment like rent, rooms pictures, etc. If he chooses the apartment then he can confirm his reservation though reservation button.<br>
--			<h6>20.	Typical Course of Events:</h6></p>
--			<img src="Select_apartment.png">
--			<br><br><br>
--
--	<h5>4.4.5: UML Expand Use Case for Reservation Apartment:</h5>
--  	<p>		
--  			21.	Use Case Name: Reservation Apartment.<br>
--			22.	Type: Primary.<br>
--			23.	Actor(s): Tenant.<br>
--			24.	Brief Overview: When a tenant wants to reserve an apartment, he first has to fill up all his information with NID number and after fill up the information he has to press confirm button, then a message go to landlord and he contact with the tenant.<br>
--			<h6>25.	Typical Course of Events:</h6></p>
--			<img src="Reservation_apartment.png">
--			<br><br><br>
--
--	<h5>4.4.6: UML Expand Use Case for Report to Landlord:</h5>
--  	<p>		
--  			26.	Use Case Name: Report to Landlord.<br>
--			27.	Type: Primary.<br>
--			28.	Actor(s): Tenant.<br>
--			29.	Brief Overview: Tenant can complain about anything of the apartment through report option.<br>
--			<h6>30.	Typical Course of Events:</h6></p><br>
--			<img src="Report to landlord.png">
--			<br><br><br>
-
-      
-  <h5>4.4.7: UML Expand Use Case for Apartment Advertise:</h5>
-  <p>   1.	Use Case Name: Apartment Advertise. <br>
-    2.	Type: Primary. <br>   
-    3.	Actor(s): Landlord.  <br>
-    4.	Brief Overview: Only landlord can upload or edit apartment advertise using this option.  <br>
-  <h6> 5.	Typical Course of Events:  </h6>
-  <img src= "Apartment Advertise.png" >
-  <br><br><br>  
-
-  <h5>4.4.8: UML Expand Use Case for Remove Advertise:</h5>
-  <p>    6.	Use Case Name: Remove Advertise.<br>
-    7.	Type: Primary. <br>
-    8.	Actor(s): Admin, Landlord.  <br>
-    9.	Brief Overview: Landlord and Admin can remove an advertise from this option. <br>
-  <h6> 10.	Typical Course of Events:  </h6>
-  <img src= "Remove Advertise.png">
-  <br><br><br>  
-
-
-  <h5>4.4.9: UML Expand Use Case for View Report from Tenant:</h5>
-  <p>   11.	Use Case Name: View report from tenant. <br>
-    12.	Type: Primary. <br>
-    13.	Actor(s): Landlord.<br>
-    14.	Brief Overview: If tenant can any report to landlord then landlord can solve this.<br>
-  <h6>  15.	Typical Course of Events: </h6>
-  <img src= "View Report from Tenant.png" >
-  <br><br><br>  
-
-
-
-  <h5>4.4.10: UML Expand Use Case for Maintaining Apartment Info:</h5>
-  <p>   16.	Use Case Name: Maintaining apartment information. <br>
-    17.	Type: Primary.<br>
-    18.	Actor(s): Admin.<br>
-    19.	Brief Overview: Only admin can maintain this. If admin upload any wrong info, then admin can change it easily.<br>
-  <h6>  20.	Typical Course of Events: </h6>
-  <img src= "Maintaining Apartment Info.png">
-  <br><br><br>  
-
-
-
-  <h5>4.4.11: UML Expand Use Case for View Monthly Bill Report:</h5>
-  <p>   21.	Use Case Name: View monthly bill report.	 <br>
-    22.	Type: Primary. <br>
-    23.	Actor(s): Admin, Tenant, Landlord.<br>
-    24.	Brief Overview: Landlord can show all the payment. After see that landlord can contact to tenant. <br>
-  <h6>  25.	Typical Course of Events: </h6>
-  <img src= "View Monthly Bill Report.png" >
-  <br><br><br>  
- 
-      
 
 	
 
